@@ -1,0 +1,21 @@
+{
+  "name": "invoicegen",
+  "version": "1.0.0",
+  "description": "Fullstack React project, an Invoice generator",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "invoice",
+    "generator",
+    "react",
+    "fullstact",
+    "mern"
+  ],
+  "author": "Israel Musa",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
