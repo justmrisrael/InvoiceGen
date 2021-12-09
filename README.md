@@ -4,3 +4,12 @@ The goal of this project is to practice implementing every aspect that encompass
     - A REST API implementation
     - Client-Server using Express and NodeJS
     - User Friendly design using good UX principles
+
+Author: [Israel Musa] (github.com/justmrisrael/)
+### Progress
+Begining Stages - 2% complete.
+
+### Main Files
+    'server.js'
+
+
