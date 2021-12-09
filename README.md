@@ -5,7 +5,7 @@ The goal of this project is to practice implementing every aspect that encompass
     - Client-Server using Express and NodeJS
     - User Friendly design using good UX principles
 
-Author: [Israel Musa] (github.com/justmrisrael/)
+Author: [Israel Musa](https://github.com/justmrisrael/)
 ### Progress
 Begining Stages - 2% complete.
 
