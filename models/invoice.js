@@ -3,44 +3,44 @@ const mongoose = require('mongoose');
 //mongodb schema
 const customSchema = new mongoose.Schema({
     sellerName : {
-        type : 'string',
+        type : 'String',
         required: true
     },
     sellerAddress : { 
-        type : 'string',
+        type : 'String',
         required: true
     },
     customerName : { 
-        type : 'string',
+        type : 'String',
         required: true
     },
     customerAddress : { 
-        type : 'string',
+        type : 'String',
         required: true
     },
     date : {
-        type : 'date',
-        required: true
+        type : 'Date',
+        default: Date.now
     },
     items : [{
         description : {
-            type : 'string',
+            type : 'String',
             required: true
         },
         price : {
-            type : 'number',
+            type : 'Number',
             required: true
         }
     }],
     finalPrice : {
-        type : 'number',
+        type : 'Number',
         required: true
     },
     terms : {
-        type : 'string',
+        type : 'String',
         required: true
     },
-    inivoiceDescription : {
+    invoiceDescription : {
         type : 'String',
         required: true
     }

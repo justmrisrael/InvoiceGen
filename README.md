@@ -7,12 +7,13 @@ The goal of this project is to practice implementing every aspect that encompass
 
 Author: [Israel Musa](https://github.com/justmrisrael/)
 ### Progress
- - 10% complete. -
+ - 15% complete. 
 
 ## Progress Report
 1. Created and tested routes to be used for REST API requests
 2. Created a MongoDB Atlas free-tier cluster, database access credentials, and successfully connected to server from application.
-3. Specified Schema for data collection
+3. Specified Schema for data collection.
+4. In file 'create.js', gave application the ability to create a document to be saved on the database.
 
 ### Main Files
     'server.js'
