@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 
 //static web server
@@ -24,6 +25,10 @@ mongoose.connection.on('error',(error)=>{
 mongoose.connection.once('open',()=>{
     console.log('Connected to MongoDB successfully')
 })
+
+// configuring body-parser
+app.use(bodyParser.urlencoded({extended : false}));
+app.use(bodyParser.json());
 
 //REST API
 app.use('/api/createinvoice', require('./routes/create.js'));
