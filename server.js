@@ -39,6 +39,10 @@ app.use('/api/updateinvoice', require('./routes/update.js'));
 
 app.use('/api/deleteinvoice', require('./routes/delete.js'));
 
+app.get('*', (request, response) => {
+    response.send("<h1>Error 404 : Page not found</h1>");
+});
+
 //port
 app.listen(3000, ()=>{
     console.log('listening on port 3000')
