@@ -1,40 +1,18 @@
 import React from 'react';
+import HomePage from './HomePage';
+import LoadCreateInvoice from './LoadCreateInvoice';
+import LoadAllInvoices from './LoadAllInvoices';
+import LoadUpdateInvoice from './LoadUpdateInvoice';
+import LoadDisplayInvoice from './LoadDisplayInvoice';
+import LoadPageNotFound from './LoadPageNotFound';
 import { 
     BrowserRouter,
     Switch,
     Route
 }from 'react-router-dom';
 
-function HomePage(props){
-    return (
-        <h1>Welcome to the Homepage!!</h1>
-    );
-}
-function LoadCreateInvoice(props){
-    return (
-        <h1>Welcome to the create invoice form!!</h1>
-    );
-}
-function LoadUpdateInvoice(props){
-    return (
-        <h1>Welcome to the update invoice form!!</h1>
-    );
-}
-function LoadDisplayInvoice(props){
-    return (
-        <h1>Welcome to the display invoice form!!</h1>
-    );
-}
-function LoadAllInvoices(props){
-    return (
-        <h1>Welcome to the invoices listing!!</h1>
-    );
-}
-function LoadPageNotFound(props){
-    return (
-        <h1>ERROR: Page Not Found</h1>
-    );
-}
+
+
 
 export default class App extends React.Component {
 
