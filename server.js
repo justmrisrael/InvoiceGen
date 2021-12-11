@@ -1,6 +1,5 @@
 //main file
 //dependencies
-//import express from 'express';
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -39,8 +38,8 @@ app.use('/api/updateinvoice', require('./routes/update.js'));
 
 app.use('/api/deleteinvoice', require('./routes/delete.js'));
 
-app.get('*', (request, response) => {
-    response.send("<h1>Error 404 : Page not found</h1>");
+app.get('*', (request, response )=>{
+    response.sendFile(path.join(__dirname, 'dist/invoice.html'));
 });
 
 //port
