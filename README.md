@@ -2,14 +2,14 @@
 This is a fullstack project using the MERN stack. 
 <br />The goal of this project is to practice implementing every aspect that encompasses a fullstack app.
 <br />    - A REST API implementation
-    - Client-Server using Express and NodeJS
-    - User Friendly design using good UX principles
+<br />    - Client-Server using Express and NodeJS
+<br />    - User Friendly design using good UX principles
 
 The web application shouldbe able to perform the following operations
-    - Create invoices 
-    - Reading Invoices from a database
-    - Update invoices
-    - Delete invoices
+<br />    - Create invoices 
+<br />    - Reading Invoices from a database
+<br />    - Update invoices
+<br />    - Delete invoices
 
 Author: [Israel Musa](https://github.com/justmrisrael/)
 ### Progress
