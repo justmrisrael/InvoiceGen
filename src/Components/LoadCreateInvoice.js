@@ -4,7 +4,7 @@ import Layout from './Layout';
 
 export default function LoadCreateInvoice(props){
     return (
-        <div className="Jumbotron">
+        <div className="jumbotron">
             <Card>
                 <Card.Header as='h4'>
                     Create Invoice Form

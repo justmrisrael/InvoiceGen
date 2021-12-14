@@ -13,7 +13,7 @@ The web application shouldbe able to perform the following operations
 
 Author: [Israel Musa](https://github.com/justmrisrael/)
 ### Progress
- - 37% complete. 
+ - 40% complete. 
 
 ## Progress Report
 1. Created and tested routes to be used for REST API requests
@@ -23,7 +23,8 @@ Author: [Israel Musa](https://github.com/justmrisrael/)
 5. Tested API with [Advanced REST client Application by MuleSoft](https://install.advancedrestclient.com/install/) using objects corresponding to the schema provided. 
     Objects were saved successfully to the database. 
 6. REST API implementaion complete. Application can now interact with the database.
-6. Applicatiion has been updated to support creating, reading, updating and deleting documents from the database.
+7. Applicatiion has been updated to support creating, reading, updating and deleting documents from the database.
+9. Creating the user interface; stled using bootstrap.
 
 ### Main Files
     'server.js'

@@ -16,6 +16,7 @@ export default class CustomText extends React.Component {
                 </Form.Label>
                 <Form.Control
                     type='text'
+                    name={this.props.name}
                     placeholder={this.props.placeholder}
                     value={this.props.val}
                     onChange={this.props.inputHandler}>
