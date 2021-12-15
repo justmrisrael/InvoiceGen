@@ -1,5 +1,6 @@
 import React from 'react';
-import CustomTextField from './CustomTextField'
+import CustomTextField from './CustomTextField';
+import CustomTextArea from './CustomTextArea';
 
 export default class Layout extends React.Component{
     constructor(props){
@@ -8,12 +9,26 @@ export default class Layout extends React.Component{
             sellerAddress : '',
             sellerName : '',
             customerName : '',
-            customerAddress : ''
+            customerAddress : '',
+            invoiceDescription : '',
+            termsAndConditions : ''
         }
         this.textFieldHandler = this.textFieldHandler.bind(this);
     }
 
     textFieldHandler(event){
+
+        if(event.target.name === 'termsAndConditions'){
+            this.setState({termsAndConditions: event.target.value});
+
+            console.log('termsAndConditions:' + this.state.termsAndConditions)
+        }
+
+        if(event.target.name === 'invoiceDescription'){
+            this.setState({invoiceDescription: event.target.value});
+            
+            console.log('invoiceDescription:' + this.state.invoiceDescription);
+        }
 
         if(event.target.name === 'sellerName'){
             this.setState({sellerName : event.target.value});
@@ -43,7 +58,14 @@ export default class Layout extends React.Component{
 
     render() {
         return(
-            <div><CustomTextField
+            <div>
+            <CustomTextArea
+                    label="Invoice Description"
+                    name="invoiceDescription"
+                    val={this.state.invoiceDescription}
+                    inputHandler={this.textFieldHandler}
+            />
+            <CustomTextField
                 text="Enter the full name"
                 customID='seller-name'
                 label="Seller's Name"
@@ -51,7 +73,7 @@ export default class Layout extends React.Component{
                 name='sellerName'
                 val={this.state.sellerName}
                 inputHandler={this.textFieldHandler}
-                />
+            />
             <CustomTextField
                 text="Enter the full street address"
                 customID='seller-address'
@@ -78,8 +100,16 @@ export default class Layout extends React.Component{
                 name='sellerName'
                 val={this.state.customerAddress}
                 inputHandler={this.textFieldHandler}
-                /></div>
-
+                />
+                
+            <CustomTextArea
+                    label="Terms and conditions"
+                    name="termsAndConditions"
+                    val={this.state.TermsAndConditions}
+                    inputHandler={this.textFieldHandler}
+            />
+            </div>
+            
         );
     }
 }
