@@ -24,7 +24,8 @@ Author: [Israel Musa](https://github.com/justmrisrael/)
     Objects were saved successfully to the database. 
 6. REST API implementaion complete. Application can now interact with the database.
 7. Applicatiion has been updated to support creating, reading, updating and deleting documents from the database.
-9. Creating the user interface; stled using bootstrap.
+9. Creating the user interface; styled using bootstrap.
+10. 
 
 ### Main Files
     'server.js'
