@@ -18,24 +18,24 @@ export default class Layout extends React.Component{
         if(event.target.name === 'sellerName'){
             this.setState({sellerName : event.target.value});
 
-            console.log('Seller Name:' + this.state.val);
+            console.log('Seller Name:' + this.state.sellerName);
         };
 
         if(event.target.name === 'sellerAddress'){
             this.setState({sellerAddress : event.target.value});
 
-            console.log('Seller Address:' + this.state.val);
+            console.log('Seller Address:' + this.state.sellerAddress);
         }
         if(event.target.name === 'customerName'){
             this.setState({customerName : event.target.value});
 
-            console.log('Customer Name:' + this.state.val);
+            console.log('Customer Name:' + this.state.customerName);
         }
 
         if(event.target.name === 'customerAddress'){
             this.setState({customerAddress : event.target.value});
 
-            console.log('Customer Address:' + this.state.val);
+            console.log('Customer Address:' + this.state.customerAddress);
         }
 
         
@@ -44,37 +44,41 @@ export default class Layout extends React.Component{
     render() {
         return(
             <div><CustomTextField
+                text="Enter the full name"
                 customID='seller-name'
                 label="Seller's Name"
-                placeholer='Type in the sellers name'
+                placeholder="First name & Last name"
                 name='sellerName'
                 val={this.state.sellerName}
                 inputHandler={this.textFieldHandler}
-                text='Enter the full name'/>
+                />
             <CustomTextField
+                text="Enter the full street address"
                 customID='seller-address'
                 label="Seller's Address"
-                placeholer='Type in the address...'
+                placeholder='Street address'
                 name='sellerAddress'
                 val={this.state.sellerAddress}
                 inputHandler={this.textFieldHandler}
-                text="Enter the seller's address"/>
+                />
             <CustomTextField
+                text="Enter the full name"
                 customID='customer-name'
                 label="Customer's Name"
-                placeholer="Type in the customer's name"
+                placeholder="First name & Last name"
                 name='customerName'
                 val={this.state.customerName}
                 inputHandler={this.textFieldHandler}
-                text='Enter the full name'/>
+                />
             <CustomTextField
-                customID='seller-address'
+                text="Enter the full street address"
+                customID='customer-address'
                 label="Customer's Address"
-                placeholer='Type in the customer address'
+                placeholder='Street address'
                 name='sellerName'
                 val={this.state.customerAddress}
                 inputHandler={this.textFieldHandler}
-                text='Enter the full address'/></div>
+                /></div>
 
         );
     }
