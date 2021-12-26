@@ -1,6 +1,7 @@
 import React from "react";
 import CustomTextField from "./CustomTextField";
 import CustomTextArea from "./CustomTextArea";
+import ProductsAndPrices from "./ProductsAndPricesListing";
 
 export default class Layout extends React.Component {
   constructor(props) {
@@ -12,6 +13,11 @@ export default class Layout extends React.Component {
       customerAddress: "",
       invoiceDescription: "",
       termsAndConditions: "",
+      itemsListing: [
+          {description: "Green Shirt", price: 250},
+          {description: "Red Shirt", price: 350},
+          {description: "Blue Shirt", price: 450},
+      ],
     };
     this.textFieldHandler = this.textFieldHandler.bind(this);
   }
@@ -98,7 +104,8 @@ export default class Layout extends React.Component {
           val={this.state.customerAddress}
           inputHandler={this.textFieldHandler}
         />
-
+        <ProductsAndPrices 
+            itemsListing={this.state.itemsListing}/>
         <CustomTextArea
           label="Terms and Conditions"
           name="termsAndConditions"
