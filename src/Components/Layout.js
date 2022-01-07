@@ -63,10 +63,11 @@ export default class Layout extends React.Component {
     return (
       <div>
         <CustomTextArea
+          
           label="Invoice Description"
           name="invoiceDescription"
           val={this.state.invoiceDescription}
-          inputHandler={this.textFieldHandler}
+          inputHandler = {this.textFieldHandler}
         />
         <CustomTextField
           text="Enter the full name"
@@ -76,6 +77,8 @@ export default class Layout extends React.Component {
           name="sellerName"
           val={this.state.sellerName}
           inputHandler={this.textFieldHandler}
+          className="spacer"
+          
         />
         <CustomTextField
           text="Enter the full street address"
