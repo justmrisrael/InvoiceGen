@@ -2,6 +2,7 @@ import React from "react";
 import CustomTextField from "./CustomTextField";
 import CustomTextArea from "./CustomTextArea";
 import ProductsAndPrices from "./ProductsAndPricesListing";
+import FinalPrice from "./FinalPrice";
 
 export default class Layout extends React.Component {
   constructor(props) {
@@ -109,6 +110,8 @@ export default class Layout extends React.Component {
         />
         <ProductsAndPrices 
             itemsListing={this.state.itemsListing}/>
+        <FinalPrice 
+        itemsListing={this.state.itemsListing}/>
         <CustomTextArea
           label="Terms and Conditions"
           name="termsAndConditions"
