@@ -4,6 +4,8 @@ import CustomTextArea from "./CustomTextArea";
 import ProductsAndPrices from "./ProductsAndPricesListing";
 import FinalPrice from "./FinalPrice";
 import DescriptionAndPrice from "./InputDescriptionAndPrice";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 export default class Layout extends React.Component {
   constructor(props) {
@@ -21,23 +23,65 @@ export default class Layout extends React.Component {
     };
     this.textFieldHandler = this.textFieldHandler.bind(this);
     this.buttonClick = this.buttonClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    //final price calculation
+    const currentItems = this.state.itemsListing;
+    let finalPrice = 0;
+    currentItems.map((product, index) => {
+      finalPrice += product.price;
+    });
+
+    //sales invoice information
+    const salesInvoice = {
+      //information to be stored in the database
+      sellerName: this.state.sellerName,
+      sellerAddress: this.state.sellerAddress,
+      customerName: this.state.customerName,
+      customerAddress: this.state.customerAddress,
+      items: this.state.itemsListing,
+      finalPrice: finalPrice,
+      terms: this.state.termsAndConditions,
+      invoiceDescription: this.state.invoiceDescription,
+    };
+
+    //store object in the database using the fetch method
+    //fetch is a promise
+    fetch("/api/createinvoice", {
+      method: "POST",
+      body: JSON.stringify(salesInvoice),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((response) => {
+      if (response.ok) {
+        //if successful
+        console.log("the invoice was successfully saved");
+      } else {
+        //if not successful
+        console.log("the invoice was not saved");
+      }
+    });
+
+    event.preventDefault();
+    console.log("you want to create a new sales invoice");
   }
 
   buttonClick() {
-
-    this.setState(( state, props )=>{
-
-        const currentArrary = this.state.itemsListing;
-        //add items to the array of items in the item listing
-        return{
-          itemsListing: currentArrary.concat([
-            {
-              description : state.descriptionVal,
-              price : parseFloat(state.priceVal),
-            }
-          ])
-        };
-    })
+    this.setState((state, props) => {
+      const currentArrary = this.state.itemsListing;
+      //add items to the array of items in the item listing
+      return {
+        itemsListing: currentArrary.concat([
+          {
+            description: state.descriptionVal,
+            price: parseFloat(state.priceVal),
+          },
+        ]),
+      };
+    });
 
     console.log("You want to add an item to the listing?");
   }
@@ -94,14 +138,16 @@ export default class Layout extends React.Component {
 
   render() {
     return (
-      <div>
+      <Form onSubmit={this.handleSubmit}>
         <CustomTextArea
           label="Invoice Description"
           name="invoiceDescription"
           val={this.state.invoiceDescription}
           inputHandler={this.textFieldHandler}
         />
+        {/* Seller Name */}
         <CustomTextField
+          style={{ marginTop: "15px" }}
           text="Enter the full name"
           customID="seller-name"
           label="Seller's Name"
@@ -111,6 +157,7 @@ export default class Layout extends React.Component {
           inputHandler={this.textFieldHandler}
           className="spacer"
         />
+        {/* Seller Address */}
         <CustomTextField
           text="Enter the full street address"
           customID="seller-address"
@@ -120,6 +167,7 @@ export default class Layout extends React.Component {
           val={this.state.sellerAddress}
           inputHandler={this.textFieldHandler}
         />
+        {/* Customer Name */}
         <CustomTextField
           text="Enter the full name"
           customID="customer-name"
@@ -129,12 +177,13 @@ export default class Layout extends React.Component {
           val={this.state.customerName}
           inputHandler={this.textFieldHandler}
         />
+        {/* Customer Address */}
         <CustomTextField
           text="Enter the full street address"
           customID="customer-address"
           label="Customer's Address"
           placeholder="Street address"
-          name="sellerName"
+          name="customerAddress"
           val={this.state.customerAddress}
           inputHandler={this.textFieldHandler}
         />
@@ -152,7 +201,11 @@ export default class Layout extends React.Component {
           val={this.state.TermsAndConditions}
           inputHandler={this.textFieldHandler}
         />
-      </div>
+        {/* button to add item to the database */}
+        <Button style={{ marginTop: "10px"}} type="submit" variant="primary" size="lg">
+          Create a sales invoice
+        </Button>
+      </Form>
     );
   }
 }

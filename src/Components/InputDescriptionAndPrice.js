@@ -38,7 +38,7 @@ export default class InputDescriptionAndPrice extends React.Component {
             <Button
               size="md"
               variant="primary"
-              style={{ marginTop: "2em" }}
+              style={{ marginTop: "2.5em" }}
               onClick={ this.props.buttonHandler }>
                 Submit
             </Button>

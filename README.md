@@ -31,3 +31,14 @@ Author: [Israel Musa](https://github.com/justmrisrael/)
     'server.js'
 
 
+## Compilation Instruction ---------------
+to run build:
+\\\
+npx webpack
+\\\
+to run server:
+\\\
+npm run server
+\\\
+
+
