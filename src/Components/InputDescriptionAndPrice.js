@@ -36,6 +36,7 @@ export default class InputDescriptionAndPrice extends React.Component {
           </Col>
           <Col>
             <Button
+              size="md"
               variant="primary"
               style={{ marginTop: "2em" }}
               onClick={ this.props.buttonHandler }>

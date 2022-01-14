@@ -17,20 +17,32 @@ export default class Layout extends React.Component {
       termsAndConditions: "",
       descriptionVal: "",
       priceVal: "",
-      itemsListing: [
-        { description: "Green Shirt", price: 250 },
-        { description: "Red Shirt", price: 350 },
-        { description: "Blue Shirt", price: 450 },
-      ],
+      itemsListing: [],
     };
     this.textFieldHandler = this.textFieldHandler.bind(this);
     this.buttonClick = this.buttonClick.bind(this);
   }
 
   buttonClick() {
+
+    this.setState(( state, props )=>{
+
+        const currentArrary = this.state.itemsListing;
+        //add items to the array of items in the item listing
+        return{
+          itemsListing: currentArrary.concat([
+            {
+              description : state.descriptionVal,
+              price : parseFloat(state.priceVal),
+            }
+          ])
+        };
+    })
+
     console.log("You want to add an item to the listing?");
   }
 
+  /////////////////////////*Text fields handler */////////////////////////////
   textFieldHandler(event) {
     if (event.target.name === "itemDescription") {
       this.setState({ descriptionVal: event.target.value });
@@ -93,7 +105,7 @@ export default class Layout extends React.Component {
           text="Enter the full name"
           customID="seller-name"
           label="Seller's Name"
-          placeholder="First name & Last name"
+          placeholder="First & Last name"
           name="sellerName"
           val={this.state.sellerName}
           inputHandler={this.textFieldHandler}

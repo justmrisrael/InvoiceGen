@@ -19,7 +19,7 @@ export default class FinalPrice extends React.Component {
       <Container>
         <Row>
           <Col>
-            <h4>${finalPrice}</h4>
+            <h4>Final Price: ${finalPrice}</h4>
           </Col>
         </Row>
       </Container>
