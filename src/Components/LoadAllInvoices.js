@@ -1,7 +1,9 @@
-import React from 'react';
+import React from "react";
+import InvoicesListing from "./InvoicesListing";
 
-export default function LoadAllInvoices(props){
-    return (
-        <h1>Welcome to the invoices listing!!</h1>
-    );
+export default function LoadAllInvoices(props) {
+  return (
+    <InvoicesListing/>
+  )
+  
 }
