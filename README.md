@@ -33,12 +33,12 @@ Author: [Israel Musa](https://github.com/justmrisrael/)
 
 ## Compilation Instruction ---------------
 to run build:
-\\\
-npx webpack
-\\\
+
+    'npx webpack'
+
 to run server:
-\\\
-npm run server
-\\\
+
+    'npm run server'
+
 
 
