@@ -13,7 +13,7 @@ The web application shouldbe able to perform the following operations
 
 Author: [Israel Musa](https://github.com/justmrisrael/)
 ### Progress
- - 40% complete. 
+ - 55% complete. 
 
 ## Progress Report
 1. Created and tested routes to be used for REST API requests
