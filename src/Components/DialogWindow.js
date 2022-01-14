@@ -15,7 +15,7 @@ export default class DialogBox extends React.Component {
         </Modal.Header>
         <Modal.Body>{this.props.content}</Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" size="lg" onClick={this.closeHandler}>
+          <Button variant="primary" size="lg" onClick={this.props.closeHandler}>
             Close
           </Button>
         </Modal.Footer>
