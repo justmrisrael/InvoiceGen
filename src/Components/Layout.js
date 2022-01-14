@@ -6,6 +6,7 @@ import FinalPrice from "./FinalPrice";
 import DescriptionAndPrice from "./InputDescriptionAndPrice";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import DialogWindow from "./DialogWindow";
 
 export default class Layout extends React.Component {
   constructor(props) {
@@ -20,10 +21,21 @@ export default class Layout extends React.Component {
       descriptionVal: "",
       priceVal: "",
       itemsListing: [],
+      show: false,
+      title: "",
+      content: "",
     };
     this.textFieldHandler = this.textFieldHandler.bind(this);
     this.buttonClick = this.buttonClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.closeWindow = this.closeWindow.bind(this);
+  }
+
+  closeWindow() {
+    this.setState({
+      show: false,
+    });
+    console.log("close dialog box");
   }
 
   handleSubmit(event) {
@@ -58,9 +70,19 @@ export default class Layout extends React.Component {
     }).then((response) => {
       if (response.ok) {
         //if successful
+        this.setState({
+          show: true,
+          title: "Success!",
+          content: "The invoice was created successfully",
+        });
         console.log("the invoice was successfully saved");
       } else {
         //if not successful
+        this.setState({
+          show: true,
+          title: "Error!",
+          content: "Error creating the invoice, Try again!",
+        });
         console.log("the invoice was not saved");
       }
     });
@@ -202,9 +224,20 @@ export default class Layout extends React.Component {
           inputHandler={this.textFieldHandler}
         />
         {/* button to add item to the database */}
-        <Button style={{ marginTop: "10px"}} type="submit" variant="primary" size="lg">
+        <Button
+          style={{ marginTop: "10px" }}
+          type="submit"
+          variant="primary"
+          size="lg"
+        >
           Create a sales invoice
         </Button>
+        <DialogWindow
+          show={this.state.show}
+          title={this.state.title}
+          content={this.state.content}
+          closeHandler={this.closeWindow}
+        />
       </Form>
     );
   }
