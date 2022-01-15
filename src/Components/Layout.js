@@ -244,7 +244,7 @@ export default class Layout extends React.Component {
               </CustomCard>
             </Col>
           </Row>
-          <Row>
+          <Row style={{ marginTop: "1em" }}>
             <Col>
               <CustomCard head="Final Price">
                 <FinalPrice itemsListing={this.state.itemsListing} />
