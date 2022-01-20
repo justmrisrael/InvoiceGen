@@ -6,7 +6,7 @@ export default function LoadAllInvoices(props) {
   return (
     <Card bg="dark" text="white">
       <Card.Header as="h3" style={{ textAlign: "center" }}>
-        InvoicesListing
+        Invoices Listing
       </Card.Header>
       <Card.Body>
         <InvoicesListing />

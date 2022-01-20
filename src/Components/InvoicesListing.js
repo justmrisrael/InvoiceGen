@@ -17,24 +17,25 @@ export default class InvoicesListing extends React.Component {
 
   deleteHandler(invoiceId) {
     fetch("/api/deleteinvoice/" + invoiceId, {
-      method: "DELETE",
+      method: "DELETE"
     }).then((response) => {
       if (response.ok) {
         //removed successfully
+        
         this.setState({
           show: true,
           title: "Success!",
           content: "Invoice deleted successfully",
-        });
+        })
       } else {
         //something was wrong
         this.setState({
           show: true,
           title: "Error!",
-          content: "Problems removing invoice",
+          content: "Problems removing invoice!",
         });
       }
-    });
+    })
     console.log("Delete invoice:" + invoiceId);
   }
 

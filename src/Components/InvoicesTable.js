@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
-export default class InvoicesTable extends React.PureComponent {
+export default class InvoicesTable extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -27,8 +27,11 @@ export default class InvoicesTable extends React.PureComponent {
             <ButtonGroup>
               <Button
                 variant="danger"
-                onClick={this.props.handleDelete(invoice.id)}
-              >
+                onClick={
+                  ()=>{
+                    this.props.handleDelete(invoice.id)
+                  }
+                }>
                 Delete
               </Button>
             </ButtonGroup>
